@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookings</title>
+</head>
+<body>
+  <header> 
+    <nav>
+
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="gallery.html">Gallery</a> |
+        <a href="services.html">Services</a> |
+        <a href="bookings.html">Bookings</a> |
+        <a href="price.html">Price</a> |
+        <a href="testimonial.html">Testimonial</a> |
+        <a href="contact.html">Contact</a>
+      
+    </nav>
+	</header>
+	
+  <main>
+  <section>
+    <h2>Our Policies</h2>
+    <ul>
+      <li>A non refundable P50 deposit should be made to book your slot and will be deducted from your nail service total.</li>
+      <li>Appointment cancellation should be made 2 days before the appointment.</li>
+      <li>Late fee will be issued if 30 minutes late.</li>
+      <li>Let us know during the service if there are certain things you don't like about your nails so that they can be fixed.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Rewards Program</h2>
+    <ul>
+      <li>Customers who visit our nail studio for the fourth time get a 30% discount.</li>
+      <li>There's a 10% referral discount.</li>
+      <li>There are special discounts during holidays.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Book an Appointment</h2>
+    <form action="submit-booking.php" method="post">
+      <div>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <div>
+        <label for="service">Type of service:</label>
+        <select id="service" name="service" required>
+          <option value="">-- Choose a Service --</option>
+          <option value="manicure">Manicure</option>
+          <option value="pedicure">Pedicure</option>
+          <option value="gel">Gel Nails</option>
+          <option value="acrylic">Acrylic Nails</option>
+          <option value="addons">Add-ons (French tips, charms)</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div>
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+</main>
+
+		  <section> 
+        <h2>Quick Links</h2> 
+        <a href="gallery.html">Gallery</a> |
+        <a href="services.html">Services</a> |
+        <a href="bookings.html">Bookings</a> |
+        <a href="price.html">Price</a> |
+        <a href="contact.html">Contact</a>	
+         </section> 
+
+
+  <footer> 
+  <p>&copy; 2026 Luxe Nail Studio.All rights reserved</p> 
+  </footer>
+</body>
+</html>
