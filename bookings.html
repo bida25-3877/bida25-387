@@ -4,11 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookings</title>
+  <link rel="stylesheet" href="styles.css">
+ 
+  
 </head>
-<body>
-  <header> 
-    <nav>
 
+<body class="booking-page">
+
+  <header> 
+   <nav class="navbar">
+    <div class="logo">Luxe Nail Studio</div>
+
+    <div class="nav-links">
         <a href="index.html">Home</a> |
         <a href="about.html">About</a> |
         <a href="gallery.html">Gallery</a> |
@@ -17,87 +24,112 @@
         <a href="price.html">Price</a> |
         <a href="testimonial.html">Testimonial</a> |
         <a href="contact.html">Contact</a>
-      
-    </nav>
-	</header>
+      </div>
+</nav>
+</header>
 	
   <main>
-  <section>
-    <h2>Our Policies</h2>
-    <ul>
-      <li>A non refundable P50 deposit should be made to book your slot and will be deducted from your nail service total.</li>
-      <li>Appointment cancellation should be made 2 days before the appointment.</li>
-      <li>Late fee will be issued if 30 minutes late.</li>
-      <li>Let us know during the service if there are certain things you don't like about your nails so that they can be fixed.</li>
-    </ul>
-  </section>
 
-  <section>
-    <h2>Rewards Program</h2>
-    <ul>
-      <li>Customers who visit our nail studio for the fourth time get a 30% discount.</li>
-      <li>There's a 10% referral discount.</li>
-      <li>There are special discounts during holidays.</li>
-    </ul>
-  </section>
+ <section class="booking-info">
 
-  <section>
-    <h2>Book an Appointment</h2>
-    <form action="submit-booking.php" method="post">
-      <div>
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
+    <div class="glass-box">
+        <h2>Our Policies</h2>
+        <ul>
+            <li>P50 non-refundable deposit required</li>
+            <li>Cancel 2 days before appointment</li>
+            <li>Late arrivals incur fees</li>
+            <li>Please communicate adjustments during service</li>
+        </ul>
+    </div>
 
-      <div>
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
+    <div class="glass-box">
+        <h2>Rewards Program</h2>
+        <ul>
+            <li>4th visit = 30% discount</li>
+            <li>10% referral discount</li>
+            <li>Holiday specials available</li>
+        </ul>
+    </div>
+    </section>
 
-      <div>
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
+  <section class="form-wrapper">
 
-      <div>
-        <label for="service">Type of service:</label>
-        <select id="service" name="service" required>
-          <option value="">-- Choose a Service --</option>
-          <option value="manicure">Manicure</option>
-          <option value="pedicure">Pedicure</option>
-          <option value="gel">Gel Nails</option>
-          <option value="acrylic">Acrylic Nails</option>
-          <option value="addons">Add-ons (French tips, charms)</option>
-        </select>
-      </div>
+<form class="glass-form">
+ action="https://formspree.io/f/maqavbqp" 
+      method="POST">
+ <h2>Book an Appointment</h2>
+ 
+ <input type="hidden" name="_subject" value="New Booking Appointment">
+ 
+    <div class="form-left">
+        <h3>Personal Details</h3>
 
-      <div>
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
-      </div>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="text" name="address" placeholder="Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        </div>
 
-      <div>
-        <label for="time">Time:</label>
-        <input type="time" id="time" name="time" required>
-      </div>
+<div class="form-right">
 
-      <button type="submit">Submit Booking</button>
-    </form>
-  </section>
+    <h2>Booking Details</h2>
+
+    <select name="service" required>
+        <option value="">Select Service</option>
+        <option>Manicure</option>
+        <option>Pedicure</option>
+        <option>Gel Nails</option>
+        <option>Acrylic Nails</option>
+        <option>Nail Art</option>
+        <option>Add-ons</option>
+    </select>
+
+    <input type="date" name="date" required>
+    <input type="time" name="time" required>
+      <label>Do you have any skin allergies?</label>
+    <select name="allergy">
+        <option>No</option>
+        <option>Yes</option>
+    </select>
+
+    <textarea name="allergy_details" placeholder="If yes, please specify"></textarea>
+
+    <label>Rate your experience:</label>
+    <div class="rating">
+        <input type="radio" name="rating" value="1">★
+        <input type="radio" name="rating" value="2">★★
+         <input type="radio" name="rating" value="3">★★★
+        <input type="radio" name="rating" value="4">★★★★
+        <input type="radio" name="rating" value="5">★★★★★
+    </div>
+
+    <button type="submit" class="book-btn">Submit Booking</button>
+
+    <p class="note">
+        Your reviews will be displayed on the <a href="testimonial.html">Testimonial page</a>
+    </p>
+
+</div>
+
+</form>
+
+
+ </section>
+   
+  
 </main>
 
-		  <section> 
+  <footer> 
+   <div class="quick-links">
         <h2>Quick Links</h2> 
         <a href="gallery.html">Gallery</a> |
         <a href="services.html">Services</a> |
         <a href="bookings.html">Bookings</a> |
         <a href="price.html">Price</a> |
         <a href="contact.html">Contact</a>	
-         </section> 
+   </div> 
 
-
-  <footer> 
   <p>&copy; 2026 Luxe Nail Studio.All rights reserved</p> 
-  </footer>
+</footer>
 </body>
 </html>

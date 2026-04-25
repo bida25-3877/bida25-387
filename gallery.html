@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
     <header>
-        <nav>
+    <nav class="navbar">
+    <div class="logo">Luxe Nail Studio</div>
+
+    <div class="nav-links">
             <a href="index.html">Home</a> |
             <a href="about.html">About</a> |
 			<a href="gallery.html">Gallery</a> |
@@ -16,33 +22,167 @@
 			<a href="price.html">Price</a> |
 			<a href="testimonial.html">Testimonial</a> |
             <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-	
+           </div>
+</nav>
+</header>
     <main>
-	  <section>
-           <nav>
-		     <a href="all">All</a> |
-			 <a href="manicure">Manicure</a> |
-			 <a href="pedicure">Pedicure</a> |
-			 <a href="gel & acrylic">Gel & Acrylic</a>
-		</section>
-			 
-		  <section> 
+        <section class="gallery-header">
+           <h1>Our Work</h1>
+           <p>Explore our nail designs</p>
+       </section>
+
+<section class="gallery-filters">
+    <button onclick="filterSelection('all')">All</button>
+    <button onclick="filterSelection('manicure')">Manicure</button>
+    <button onclick="filterSelection('pedicure')">Pedicure</button>
+    <button onclick="filterSelection('gel')">Gel & Acrylic</button>
+</section>
+
+
+<section class="gallery-grid">
+
+    <div class="gallery-card manicure">
+        <img src="Cherry Mocha Nails Are Fall_Winter’s Most Delicious Trend.jpg">
+        <p>Manicure Design</p>
+    </div>
+
+    <div class="gallery-card pedicure">
+        <img src="French Black Acrylic Pedicure_ 20 Latest Acrylic Pedicure Ideas To Try In 2024!.jpg">
+        <p>Pedicure Design</p>
+    </div>
+
+    <div class="gallery-card gel">
+        <img src="gallery-bg Manicure (3).jpg">
+        <p>Gel & Acrylic</p>
+    </div>
+
+    <div class="gallery-card manicure">
+        <img src="French stiletto 💋.jpg">
+        <p>Manicure Design</p>
+    </div>
+
+    <div class="gallery-card pedicure">
+        <img src="Blush-Toned French Tips, Pastel Press-Ons, & 14 More Pretty Pink Pedicure Ideas.jpg">
+        <p>Pedicure Design</p>
+    </div>
+
+    <div class="gallery-card gel">
+        <img src="gallery-bg Manicure.jpg">
+        <p>Gel & Acrylic</p>
+    </div>
+	
+	  <div class="gallery-card manicure">
+        <img src="WhatsApp Image 2026-04-15 at 19.12.16.jpeg">
+        <p>Manicure</p>
+    </div>
+	
+	  <div class="gallery-card manicure">
+        <img src="Lo.jpg">
+        <p>Manicure"Lo.jpg"</p>
+    </div>
+	
+	  <div class="gallery-card manicure">
+        <img src="male nails.jpg">
+        <p>Manicure</p>
+    </div>
+	
+	  <div class="gallery-card manicure">
+        <img src="WhatsApp Image 2026-04-15 at 19.12.17 (2).jpeg">
+        <p>Manicure Design</p>
+    </div>
+	
+	  <div class="gallery-card pedicure">
+        <img src="French Black Acrylic Pedicure_ 20 Latest Acrylic Pedicure Ideas To Try In 2024!.jpg">
+        <p>Pedicure Design</p>
+    </div>
+	
+	  <div class="gallery-card pedicure">
+        <img src="gallery-bg Manicure-Pedicure.jpg">
+        <p>Pedicure Design</p>
+    </div>
+	
+	  <div class="gallery-card pedicure">
+        <img src="IYANLA - LICENSED ATL PEDICURIST AND EDUCATOR on….jpg">
+        <p>Pedicure Design</p>
+    </div>
+	
+	<div class="gallery-card pedicure">
+        <img src="31 Things That'll Help _Heel_ Basically All Of Your Foot Problems.jpg">
+        <p>Pedicure</p>
+    </div>
+	
+	<div class="gallery-card pedicure">
+        <img src="Frost Pedicure Bowls.jpg">
+        <p>Pedicure</p>
+    </div>
+	
+	<div class="gallery-card pedicure">
+        <img src="Foot Pain_ Causes and Treatment.jpg">
+        <p>Pedicure</p>
+    </div>
+	
+	<div class="gallery-card gel">
+        <img src="WhatsApp Image 2026-04-15 at 19.12.20.jpeg">
+        <p>Gel & Acrylic</p>
+    </div>
+	
+	<div class="gallery-card gel">
+        <img src="WhatsApp Image 2026-04-15 at 19.12.21.jpeg"
+        <p>Gel & Acrylic</p>
+    </div>
+	
+	<div class="gallery-card gel">
+        <img src="WhatsApp Image 2026-04-15 at 19.12.17 (1).jpeg">
+        <p>Gel & Acrylic</p>
+    </div>
+	
+	<div class="gallery-card gel">
+        <img src="WhatsApp Image 2026-04-15 at 19.12.22.jpeg">
+        <p>Gel & Acrylic</p>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+
+<div class="quick-links">	 
         <h2>Quick Links</h2> 
         <a href="gallery.html">Gallery</a> |
         <a href="services.html">Services</a> |
         <a href="bookings.html">Bookings</a> |
         <a href="price.html">Price</a> |
         <a href="contact.html">Contact</a>	
-		
-    </section> 
-        
-    </main>
-	
-	    <footer>
-        <p>&copy; 2026 Luxe nail Studio.All rights reserved</p>
-    </footer>
+</div>
+
+	<p>&copy; 2026 Luxe Nail Studio. All rights reserved</p>
+
+</footer>
+
+<script>
+function filterSelection(category) {
+    let items = document.getElementsByClassName("gallery-card");
+
+    for (let i = 0; i < items.length; i++) {
+        items[i].style.display = "none";
+    }
+
+    if (category === "all") {
+        for (let i = 0; i < items.length; i++) {
+            items[i].style.display = "block";
+        }
+    } else {
+        let selected = document.getElementsByClassName(category);
+        for (let i = 0; i < selected.length; i++) {
+            selected[i].style.display = "block";
+        }
+    }
+}
+</script>
+
+	   
 </body>
 </html>
 
