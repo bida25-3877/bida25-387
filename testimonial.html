@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Testimonial</title>
-  <link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="testimonial-page">
@@ -83,5 +84,45 @@
 
   <p>&copy; 2026 Luxe Nail Studio.All rights reserved</p> 
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+const testimonialContainer = document.getElementById("testimonialContainer");
+
+const testimonials = JSON.parse(localStorage.getItem("testimonial")) || [];
+
+if (reviews.length === 0) {
+
+    testimonialContainer.innerHTML = `
+        <p>No reviews yet 💅</p>
+    `;
+
+} else {
+
+    reviews.forEach(review => {
+
+        testimonialContainer.innerHTML += `
+
+            <div class="review-card">
+
+                <h3>${review.name}</h3>
+
+                <p class="stars">
+                    ${"⭐".repeat(review.rating)}
+                </p>
+
+                <p>
+                    ${review.comment}
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+</script>
 </body>
 </html>

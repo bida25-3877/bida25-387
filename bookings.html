@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookings</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="styles.css">
  
   
@@ -52,74 +53,116 @@
     </div>
     </section>
 
-  <section class="form-wrapper">
-
-<form class="glass-form">
- action="https://formspree.io/f/maqavbqp" 
+ <section class="form-wrapper">
+  <form class="glass-form" id="bookingForm"
+      action="https://formspree.io/f/maqavbqp"
       method="POST">
- <h2>Book an Appointment</h2>
- 
- <input type="hidden" name="_subject" value="New Booking Appointment">
- 
-    <div class="form-left">
-        <h3>Personal Details</h3>
 
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="text" name="address" placeholder="Address" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        </div>
+  <h2>Book an Appointment </h2>
 
-<div class="form-right">
+  <div class="form-grid row g-4">
 
-    <h2>Booking Details</h2>
+    <div class="form-column col-md-6">
+        <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+      <input class="form-control" type="date" name="date" required>
+      <input class="form-control" type="time" name="time" required>
+      <input class="form-control" type="tel" name="phone" placeholder="Contact Number" required>
+      <input class="form-control" type="email" name="email" placeholder="Email Address" required>
+      </div>
 
-    <select name="service" required>
-        <option value="">Select Service</option>
-        <option>Manicure</option>
-        <option>Pedicure</option>
-        <option>Gel Nails</option>
-        <option>Acrylic Nails</option>
-        <option>Nail Art</option>
-        <option>Add-ons</option>
-    </select>
+     <div class="form-column col-md-6">
+      <label>Select Service</label>
 
-    <input type="date" name="date" required>
-    <input type="time" name="time" required>
-      <label>Do you have any skin allergies?</label>
-    <select name="allergy">
-        <option>No</option>
-        <option>Yes</option>
-    </select>
+<select class="form-control" name="service" required>
 
-    <textarea name="allergy_details" placeholder="If yes, please specify"></textarea>
+  <option value="">Choose Service</option>
 
-    <label>Rate your experience:</label>
-    <div class="rating">
-        <input type="radio" name="rating" value="1">★
-        <input type="radio" name="rating" value="2">★★
-         <input type="radio" name="rating" value="3">★★★
-        <input type="radio" name="rating" value="4">★★★★
-        <input type="radio" name="rating" value="5">★★★★★
+  <optgroup label="Manicure">
+    <option value="Buff & Shine|70">Buff & Shine (P70)</option>
+    <option value="Cuticle Work|30">Cuticle Work (P30)</option>
+    <option value="Gel on Natural Nails|100">Gel on Natural Nails (P100)</option>
+  </optgroup>
+
+  <optgroup label="Pedicure">
+    <option value="Gel Natural|100">Gel on Natural Nails (P100)</option>
+    <option value="Gel Tips|150">Gel on Tips (P150)</option>
+    <option value="Acrylic Extension|180">Acrylic Extension (P180)</option>
+    <option value="Foot Treatment|150">Foot Treatment (P150)</option>
+  </optgroup>
+
+  <optgroup label="Acrylic Nails">
+    <option value="Acrylic Short|100">Short Length (P100)</option>
+    <option value="Acrylic Medium|150">Medium Length (P150)</option>
+    <option value="Acrylic Long|250">Long Length (P250)</option>
+  </optgroup>
+
+  <optgroup label="Gel Nails">
+    <option value="Gel Short|100">Short Length (P100)</option>
+    <option value="Gel Medium|120">Medium Length (P120)</option>
+    <option value="Gel Long|150">Long Length (P150)</option>
+  </optgroup>
+
+ </select>
+
+   <label>Add-ons</label>
+      <div class="addons">
+        <label><input class="form-control" type="checkbox" name="addons" value="French Tip"> French Tip</label>
+        <label><input class="form-control" type="checkbox" name="addons" value="Ombre"> Ombre</label>
+        <label><input class="form-control" type="checkbox" name="addons" value="Charms"> Charms</label>
+        <label><input class="form-control" type="checkbox" name="addons" value="Cat Eye"> Cat Eye</label>
+        <label><input class="form-control" type="checkbox" name="addons" value="Blooming Gel"> Blooming Gel</label>
+        <label><input class="form-control" type="checkbox" name="addons" value="Nail Art"> Nail Art</label>
+      </div>
+	  
+	  <div id="totalDisplay" style="margin-top:10px; font-weight:bold; font-size:18px;">
+  Total: P0
+</div>
+	  
+        <label>Do you have any skin condition?</label>
+        <select class="form-control" name="allergy">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+        <textarea class="form-control" name="allergy_details" placeholder="If yes, please specify"></textarea>
+
+		  <div class="form-submit">
+      <button type="submit" class="book-btn btn btn-dark w-100">Submit Booking</button>
+      <p id="formMessage" style="display:none; font-weight:bold;"></p>
     </div>
+	
+<div id="reviewPopup" class="popup-overlay">
 
-    <button type="submit" class="book-btn">Submit Booking</button>
+  <div class="popup-box">
 
-    <p class="note">
-        Your reviews will be displayed on the <a href="testimonial.html">Testimonial page</a>
-    </p>
+    <h3>Thank you for your booking 💅</h3>
+    <p>Please leave a review</p>
+
+    <form id="popupReviewForm">
+
+      <div class="popup-rating">
+        <label><input class="form-control" type="radio" name="rating" value="1"> ★</label>
+        <label><input class="form-control" class="form-control" type="radio" name="rating" value="2"> ★★</label>
+        <label><input class="form-control" type="radio" name="rating" value="3"> ★★★</label>
+        <label><input class="form-control" type="radio" name="rating" value="4"> ★★★★</label>
+        <label><input class="form-control" type="radio" name="rating" value="5"> ★★★★★</label>
+      </div>
+
+      <textarea class="form-control" name="comment" placeholder="Leave a comment..."></textarea>
+
+      <button type="submit">Submit Review</button>
+
+    </form>
+
+  </div>
 
 </div>
 
-</form>
+  </form>
+</section>
 
-
- </section>
-   
-  
 </main>
 
-  <footer> 
+ <footer> 
    <div class="quick-links">
         <h2>Quick Links</h2> 
         <a href="gallery.html">Gallery</a> |
@@ -131,5 +174,7 @@
 
   <p>&copy; 2026 Luxe Nail Studio.All rights reserved</p> 
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

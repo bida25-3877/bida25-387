@@ -302,14 +302,14 @@ background-attachment: fixed;
 .testimonial-section
 {
 text-align: center;
-padding: 50px 20px;
+padding: 40px;
 }
 .testimonial-container 
 { 
 display: flex; 
 flex-direction: column; 
 gap: 30px; 
-padding: 40px; 
+padding: 50px 20px; 
 } 
 .testimonial-row 
 { display: flex; 
@@ -317,6 +317,21 @@ justify-content: flex-start;
 }
 .testimonial-row.reverse 
 { justify-content: flex-end; 
+}
+.review-card {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+  padding: 20px;
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+  animation: fadeUp 0.5s ease;
+}
+
+.review-card h3 {
+  color: deeppink;
 }
 .message-box 
 { max-width: 400px; 
@@ -449,29 +464,30 @@ backdrop-filter: blur(10px);
 padding: 30px; 
 border-radius: 20px; 
 } 
-.form-left, 
-.form-right 
-{ 
-flex: 1; 
-display: flex; 
-flex-direction: column; 
-gap: 12px; 
-} 
-input, select, textarea 
-{ 
-padding: 10px; 
-border: 1px solid #d1006f; 
-border-radius: 10px; 
-outline: none; 
-} 
-.book-btn 
-{ 
-background-color: black; 
-color: #d1006f; 
-border: 2px solid #d1006f; 
-padding: 10px; 
-border-radius: 20px; 
-cursor: pointer; 
+.form-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.book-btn {
+  background-color: #000;
+  color: magenta;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 transition: 0.3s; 
 } 
 .book-btn:hover 
@@ -503,6 +519,44 @@ width: 90%;
 flex-direction: column; 
 align-items: center; 
 } 
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.popup-box {
+  background: white;
+  padding: 20px;
+  width: 320px;
+  border-radius: 12px;
+  text-align: center;
+
+  transform: scale(0.7);
+  opacity: 0;
+
+  transition: 0.3s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-overlay.active .popup-box {
+  transform: scale(1);
+  opacity: 1;
+}
 }
 #policies 
 { 
