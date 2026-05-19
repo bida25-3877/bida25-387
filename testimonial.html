@@ -4,35 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Testimonial</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="testimonial-page">
 
   <header> 
-    <nav class="navbar">
-      <div class="logo">Luxe Nail Studio</div>
+    <nav class="navbar navbar-expand-lg navbar-pink">
+	
+        <div class="container">
+		
+            <a class="navbar-brand" href="index.html">Luxe Nail Studio</a>
+			
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			
+                <span class="navbar-toggler-icon"></span>
+				
+            </button>
+			
+            <div class="collapse navbar-collapse" id="navbarNav">
+			
+              <ul class="navbar-nav ms-auto gap-3">
+				
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+					
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+					
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="bookings.html">Bookings</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="price.html">Price</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="testimonial.html">Testimonial</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+					
+                </ul>
+				
+            </div>
+        </div>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="gallery.html">Gallery</a> |
-        <a href="services.html">Services</a> |
-        <a href="bookings.html">Bookings</a> |
-        <a href="price.html">Price</a> |
-        <a href="testimonial.html">Testimonial</a> |
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
+</nav>
 	</header>
 	
 	
   <main> 
   
    <section class="testimonial-section">
-    <h2>Client Reviews</h2>
+  <div style="text-align: center; padding-top: 40px; margin-bottom: 20px;">
+    <h2 style="color: #ff00ff; font-size: 32px; font-weight: bold;">Client Reviews</h2>
     
+    <div class="review-button-wrapper" style="margin-top: 15px; position: relative; z-index: 10;">
+        <button id="openReviewBtn" class="btn btn-dark" style="padding: 10px 20px; border-radius: 30px; font-weight: bold; background-color: #000; color: #fff;">Leave a Review 💅</button>
+    </div>
+</div>
+
+<div class="testimonial-container">
+    </div>
+
+<div id="reviewPopup" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center;">
+  <div class="popup-box" style="background: white; padding: 30px; border-radius: 20px; max-width: 400px; width: 90%; box-sizing: border-box; box-shadow: 0 5px 25px rgba(0,0,0,0.3);">
+    <h3 style="color: black; margin-top: 0;">How were your nails? 💅</h3>
+    <p style="color: gray;">Please leave a review</p>
+    
+    <form id="popupReviewForm">
+      <input class="form-control" type="text" name="reviewerName" placeholder="Your Name" required style="margin-bottom: 15px; width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+
+      <div class="popup-rating" style="margin-bottom: 15px; font-size: 20px; display: flex; gap: 10px; justify-content: center;">
+        <label style="color: black; cursor: pointer;"><input type="radio" name="rating" value="1" required> ★</label>
+        <label style="color: black; cursor: pointer;"><input type="radio" name="rating" value="2"> ★★</label>
+        <label style="color: black; cursor: pointer;"><input type="radio" name="rating" value="3"> ★★★</label>
+        <label style="color: black; cursor: pointer;"><input type="radio" name="rating" value="4"> ★★★★</label>
+        <label style="color: black; cursor: pointer;"><input type="radio" name="rating" value="5"> ★★★★★</label>
+      </div>
+      
+      <textarea class="form-control" name="comment" placeholder="Leave a comment..." required style="margin-bottom: 15px; width: 100%; height: 100px; padding: 10px; border-radius: 8px; border: 1px solid #ccc; resize: none;"></textarea>
+      
+      <button type="submit" class="btn btn-dark w-100" style="margin-bottom: 10px; padding: 10px; border-radius: 8px; font-weight: bold;">Submit Review</button>
+      <button type="button" id="closeReviewBtn" class="btn btn-light w-100" style="padding: 10px; border-radius: 8px;">Cancel</button>
+    </form>
+  </div>
+</div>
     <div class="testimonial-container">
   
   <div class="testimonial-row">
@@ -84,45 +156,91 @@
 
   <p>&copy; 2026 Luxe Nail Studio.All rights reserved</p> 
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector(".testimonial-container");
+    const reviewPopup = document.getElementById("reviewPopup");
+    const openBtn = document.getElementById("openReviewBtn");
+    const closeBtn = document.getElementById("closeReviewBtn");
+    const popupForm = document.getElementById("popupReviewForm");
 
-const testimonialContainer = document.getElementById("testimonialContainer");
+    if (openBtn) openBtn.addEventListener("click", () => reviewPopup.style.display = "flex");
+    if (closeBtn) closeBtn.addEventListener("click", () => reviewPopup.style.display = "none");
 
-const testimonials = JSON.parse(localStorage.getItem("testimonial")) || [];
+    function displayReviews() {
+        if (!container) return;
+        
+        const oldDynamicRows = document.querySelectorAll(".dynamic-created-row");
+        oldDynamicRows.forEach(el => el.remove());
 
-if (reviews.length === 0) {
+        const existingStaticRows = container.querySelectorAll(".testimonial-row:not(.dynamic-created-row)");
+        let currentTotalCount = existingStaticRows.length;
 
-    testimonialContainer.innerHTML = `
-        <p>No reviews yet 💅</p>
-    `;
+        const sharedReviews = JSON.parse(localStorage.getItem("sharedReviews")) || [];
 
-} else {
+        sharedReviews.forEach(r => {
+            const starsHtml = "★".repeat(r.rating) + "☆".repeat(5 - r.rating);
+            
+            currentTotalCount++;
 
-    reviews.forEach(review => {
+            const rowDiv = document.createElement("div");
+            
+            let sideClass = "";
+            if (currentTotalCount % 2 === 1) {
+                rowDiv.className = "testimonial-row dynamic-created-row";
+                sideClass = "left";
+            } else {
+                rowDiv.className = "testimonial-row reverse dynamic-created-row";
+                sideClass = "right";
+            }
 
-        testimonialContainer.innerHTML += `
+            rowDiv.innerHTML = `
+                <div class="message-box ${sideClass}">
+                    <p class="name">${r.name}</p>
+                    <p class="text">${r.comment}</p>
+                    <p class="stars">${starsHtml}</p>
+                </div>
+            `;
+            
+            container.appendChild(rowDiv);
+        });
+    }
 
-            <div class="review-card">
+    if (popupForm) {
+        popupForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            const customerName = popupForm.reviewerName.value;
+            const rating = popupForm.rating.value;
+            const comment = popupForm.comment.value;
 
-                <h3>${review.name}</h3>
+            if (!customerName || !rating || !comment) {
+                alert("Please fill in your name, rating, and comment 💅");
+                return;
+            }
 
-                <p class="stars">
-                    ${"⭐".repeat(review.rating)}
-                </p>
+            const newReview = {
+                name: customerName,
+                rating: parseInt(rating),
+                comment: comment
+            };
 
-                <p>
-                    ${review.comment}
-                </p>
+            let totalReviews = JSON.parse(localStorage.getItem("sharedReviews")) || [];
+            totalReviews.push(newReview);
+            localStorage.setItem("sharedReviews", JSON.stringify(totalReviews));
 
-            </div>
+            popupForm.reset();
+            reviewPopup.style.display = "none";
+            alert("Thanks for your review 💅");
+            
+            displayReviews(); 
+        });
+    }
 
-        `;
-
-    });
-
-}
-
+    displayReviews();
+});
 </script>
 </body>
 </html>

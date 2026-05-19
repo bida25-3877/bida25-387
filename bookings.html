@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookings</title>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
  
   
@@ -13,19 +13,59 @@
 <body class="booking-page">
 
   <header> 
-   <nav class="navbar">
-    <div class="logo">Luxe Nail Studio</div>
+   <nav class="navbar navbar-expand-lg navbar-pink">
+	
+        <div class="container">
+		
+            <a class="navbar-brand" href="index.html">Luxe Nail Studio</a>
+			
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			
+                <span class="navbar-toggler-icon"></span>
+				
+            </button>
+			
+            <div class="collapse navbar-collapse" id="navbarNav">
+			
+                <ul class="navbar-nav ms-auto gap-3">
+				
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+					
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+					
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="bookings.html">Bookings</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="price.html">Price</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="testimonial.html">Testimonial</a>
+                    </li>
+					
+					 <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+					
+                </ul>
+				
+            </div>
+        </div>
 
-    <div class="nav-links">
-        <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="gallery.html">Gallery</a> |
-        <a href="services.html">Services</a> |
-        <a href="bookings.html">Bookings</a> |
-        <a href="price.html">Price</a> |
-        <a href="testimonial.html">Testimonial</a> |
-        <a href="contact.html">Contact</a>
-      </div>
 </nav>
 </header>
 	
@@ -33,8 +73,10 @@
 
  <section class="booking-info">
 
-    <div class="glass-box">
-        <h2>Our Policies</h2>
+    <div class="booking-section text-center">
+    <h2 class="booking-heading">Our Policies</h2>
+    
+    <div class="booking-card">
         <ul>
             <li>P50 non-refundable deposit required</li>
             <li>Cancel 2 days before appointment</li>
@@ -42,15 +84,19 @@
             <li>Please communicate adjustments during service</li>
         </ul>
     </div>
+</div>
 
-    <div class="glass-box">
-        <h2>Rewards Program</h2>
+<div class="booking-section text-center">
+    <h2 class="booking-heading">Rewards Program</h2>
+    
+    <div class="booking-card">
         <ul>
             <li>4th visit = 30% discount</li>
             <li>10% referral discount</li>
             <li>Holiday specials available</li>
         </ul>
     </div>
+</div>
     </section>
 
  <section class="form-wrapper">
@@ -58,25 +104,23 @@
       action="https://formspree.io/f/maqavbqp"
       method="POST">
 
-  <h2>Book an Appointment </h2>
+  <div class="booking-section text-center">
+    <h2 class="booking-heading">Book an Appointment</h2>
+    
+    <div class="booking-card">
+        <form id="bookingForm">
+       <div class="form-group-custom">
+                <input class="form-control mb-3" type="text" name="name" placeholder="Full Name" required>
+                <input class="form-control mb-3" type="date" name="date" required>
+                <input class="form-control mb-3" type="time" name="time" required>
+                <input class="form-control mb-3" type="tel" name="phone" placeholder="Contact Number" required>
+                <input class="form-control mb-3" type="email" name="email" placeholder="Email Address" required>
+            </div>
 
-  <div class="form-grid row g-4">
-
-    <div class="form-column col-md-6">
-        <input class="form-control" type="text" name="name" placeholder="Full Name" required>
-      <input class="form-control" type="date" name="date" required>
-      <input class="form-control" type="time" name="time" required>
-      <input class="form-control" type="tel" name="phone" placeholder="Contact Number" required>
-      <input class="form-control" type="email" name="email" placeholder="Email Address" required>
-      </div>
-
-     <div class="form-column col-md-6">
-      <label>Select Service</label>
-
-<select class="form-control" name="service" required>
-
-  <option value="">Choose Service</option>
-
+   <div class="form-group-custom mt-4">
+                <select class="form-select mb-3" name="service" required>
+                    <option value="" disabled selected>Choose Service</option>
+   </div>
   <optgroup label="Manicure">
     <option value="Buff & Shine|70">Buff & Shine (P70)</option>
     <option value="Cuticle Work|30">Cuticle Work (P30)</option>
@@ -104,8 +148,9 @@
 
  </select>
 
-   <label>Add-ons</label>
-      <div class="addons">
+  <div class="form-group-custom mt-8">
+                <label class="form-label-custom">Add-ons</label>
+                <div class="addons-grid">
         <label><input class="form-control" type="checkbox" name="addons" value="French Tip"> French Tip</label>
         <label><input class="form-control" type="checkbox" name="addons" value="Ombre"> Ombre</label>
         <label><input class="form-control" type="checkbox" name="addons" value="Charms"> Charms</label>
@@ -113,43 +158,27 @@
         <label><input class="form-control" type="checkbox" name="addons" value="Blooming Gel"> Blooming Gel</label>
         <label><input class="form-control" type="checkbox" name="addons" value="Nail Art"> Nail Art</label>
       </div>
-	  
-	  <div id="totalDisplay" style="margin-top:10px; font-weight:bold; font-size:18px;">
-  Total: P0
 </div>
 	  
-        <label>Do you have any skin condition?</label>
-        <select class="form-control" name="allergy">
-          <option>No</option>
-          <option>Yes</option>
-        </select>
-        <textarea class="form-control" name="allergy_details" placeholder="If yes, please specify"></textarea>
+	 <div class="total-display-wrapper my-4">
+                <h4 id="totalDisplay" style="color: deeppink; font-weight: bold;">Total: P0</h4>
+            </div>
+			
+	<div class="form-group-custom mt-3">
+    <label class="form-label-custom">Do you have any skin condition?</label>
+    
+    <select class="form-select mb-4" name="skinCondition" required>
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+    </select>
+    
+  <textarea class="form-control mb-4" name="allergyDetails" placeholder="If yes, please specify" rows="3"></textarea>
+</div>
 
 		  <div class="form-submit">
       <button type="submit" class="book-btn btn btn-dark w-100">Submit Booking</button>
       <p id="formMessage" style="display:none; font-weight:bold;"></p>
     </div>
-	
-<div id="reviewPopup" class="popup-overlay">
-
-  <div class="popup-box">
-
-    <h3>Thank you for your booking 💅</h3>
-    <p>Please leave a review</p>
-
-    <form id="popupReviewForm">
-
-      <div class="popup-rating">
-        <label><input class="form-control" type="radio" name="rating" value="1"> ★</label>
-        <label><input class="form-control" class="form-control" type="radio" name="rating" value="2"> ★★</label>
-        <label><input class="form-control" type="radio" name="rating" value="3"> ★★★</label>
-        <label><input class="form-control" type="radio" name="rating" value="4"> ★★★★</label>
-        <label><input class="form-control" type="radio" name="rating" value="5"> ★★★★★</label>
-      </div>
-
-      <textarea class="form-control" name="comment" placeholder="Leave a comment..."></textarea>
-
-      <button type="submit">Submit Review</button>
 
     </form>
 
@@ -174,7 +203,8 @@
 
   <p>&copy; 2026 Luxe Nail Studio.All rights reserved</p> 
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
