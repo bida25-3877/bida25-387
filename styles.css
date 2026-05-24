@@ -94,6 +94,22 @@ footer {
     padding: 100px 20px;
     animation: zoomFade 1.2s ease;
 }
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.socials a:hover {
+  color: deeppink;
+}
 
 .book-btn 
 { 
